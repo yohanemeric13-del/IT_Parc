@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates xml:space="preserve">
+    <t t-name="gestion_parc.Dashboard">
+        <div class="o_gestion_parc_dashboard p-4">
+            <t t-if="state.loading">
+                <div class="text-muted">Chargement...</div>
+            </t>
+            <t t-else="">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <div>
+                        <h2 class="mb-1">Gestion Parc</h2>
+                        <div class="text-muted">Vue synthetique du parc informatique</div>
+                    </div>
+                </div>
+                <div class="row g-3 mb-4">
+                    <div class="col-12 col-md-3">
+                        <div class="border rounded p-3 bg-white">
+                            <div class="text-muted">Materiels</div>
+                            <div class="fs-2 fw-bold"><t t-esc="state.data.kpis.total"/></div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <div class="border rounded p-3 bg-white">
+                            <div class="text-muted">Affectes</div>
+                            <div class="fs-2 fw-bold"><t t-esc="state.data.kpis.assigned"/></div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <div class="border rounded p-3 bg-white">
+                            <div class="text-muted">En maintenance</div>
+                            <div class="fs-2 fw-bold"><t t-esc="state.data.kpis.maintenance"/></div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <div class="border rounded p-3 bg-white">
+                            <div class="text-muted">Notifications ouvertes</div>
+                            <div class="fs-2 fw-bold"><t t-esc="state.data.kpis.open_alerts"/></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col-12 col-lg-8">
+                        <div class="border rounded p-3 bg-white">
+                            <h3 class="h5 mb-3">Repartition par type</h3>
+                            <t t-if="!state.data.by_type.length">
+                                <div class="text-muted">Aucune donnee disponible</div>
+                            </t>
+                            <t t-foreach="state.data.by_type" t-as="item" t-key="item.label">
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="me-3" style="width: 160px;"><t t-esc="item.label"/></div>
+                                    <svg width="220" height="22" role="img">
+                                        <rect x="0" y="3" t-att-width="barWidth(item.count)" height="16" fill="#017E84"/>
+                                    </svg>
+                                    <div class="ms-2 fw-bold"><t t-esc="item.count"/></div>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="border rounded p-3 bg-white">
+                            <h3 class="h5 mb-3">Accords et couts</h3>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Accords a echeance</span>
+                                <strong><t t-esc="state.data.kpis.expiring_contracts"/></strong>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Cout maintenance</span>
+                                <strong><t t-esc="state.data.kpis.maintenance_cost"/></strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </div>
+    </t>
+</templates>
