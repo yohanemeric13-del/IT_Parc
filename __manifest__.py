@@ -28,6 +28,8 @@
         'security/parc_securite.xml',
         'security/ir.model.access.csv',
         'data/gestion_parc_data.xml',
+        'report/gestion_parc_reports.xml',
+        'report/gestion_parc_report_templates.xml',
         'wizards/reattribution_wizard_views.xml',
         'wizards/renouvellement_accord_wizard_views.xml',
         'wizards/scan_alertes_wizard_views.xml',
@@ -38,8 +40,6 @@
         'views/intervention_views.xml',
         'views/accord_views.xml',
         'views/alerte_views.xml',
-        'report/gestion_parc_reports.xml',
-        'report/gestion_parc_report_templates.xml',
         'views/menu_views.xml',
     ],
     'demo': [

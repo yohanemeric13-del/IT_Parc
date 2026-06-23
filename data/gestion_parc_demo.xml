@@ -1,186 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="1">
+        <!-- Nouveaux Partenaires / Fournisseurs -->
         <record id="partner_demo_gp_vendor_1" model="res.partner">
-            <field name="name">Abidjan IT Services</field>
+            <field name="name">Tech Solutions Paris</field>
             <field name="is_company" eval="True"/>
         </record>
         <record id="partner_demo_gp_vendor_2" model="res.partner">
-            <field name="name">Cocody Networks</field>
+            <field name="name">Lyon Networks</field>
             <field name="is_company" eval="True"/>
         </record>
         <record id="partner_demo_gp_vendor_3" model="res.partner">
-            <field name="name">Bouake Digital Support</field>
+            <field name="name">Marseille IT Support</field>
             <field name="is_company" eval="True"/>
         </record>
 
+        <!-- Nouveaux Employés -->
         <record id="employee_demo_gp_1" model="hr.employee">
-            <field name="name">Awa Kone</field>
+            <field name="name">Jean Dupont</field>
         </record>
         <record id="employee_demo_gp_2" model="hr.employee">
-            <field name="name">Jean Kouadio</field>
+            <field name="name">Marie Curie</field>
         </record>
         <record id="employee_demo_gp_3" model="hr.employee">
-            <field name="name">Mariam Traore</field>
+            <field name="name">Paul Martin</field>
         </record>
 
+        <!-- Nouveaux Matériels -->
         <record id="equipment_demo_01" model="gestion.materiel">
-            <field name="name">Laptop Dell Latitude 7440</field>
-            <field name="code">GP-PC-001</field>
-            <field name="serial_no">DL7440-001</field>
+            <field name="name">MacBook Pro M3 14"</field>
+            <field name="code">GP-MAC-001</field>
+            <field name="serial_no">MAC-M3-001</field>
             <field name="asset_type">computer</field>
             <field name="employee_id" ref="employee_demo_gp_1"/>
-            <field name="purchase_value">850000</field>
-            <field name="warranty_date">2026-12-31</field>
+            <field name="purchase_value">2200000</field>
+            <field name="warranty_date">2027-12-31</field>
             <field name="state">assigned</field>
         </record>
         <record id="equipment_demo_02" model="gestion.materiel">
-            <field name="name">Laptop HP EliteBook 840</field>
+            <field name="name">Lenovo ThinkPad T14</field>
             <field name="code">GP-PC-002</field>
-            <field name="serial_no">HP840-002</field>
+            <field name="serial_no">THNK-T14-002</field>
             <field name="asset_type">computer</field>
             <field name="employee_id" ref="employee_demo_gp_2"/>
-            <field name="purchase_value">780000</field>
-            <field name="warranty_date">2026-09-30</field>
+            <field name="purchase_value">1100000</field>
+            <field name="warranty_date">2026-10-31</field>
             <field name="state">assigned</field>
         </record>
         <record id="equipment_demo_03" model="gestion.materiel">
-            <field name="name">Serveur Dell PowerEdge</field>
+            <field name="name">Serveur HP ProLiant DL380</field>
             <field name="code">GP-SRV-001</field>
-            <field name="serial_no">SRV-DELL-001</field>
+            <field name="serial_no">HP-DL380-001</field>
             <field name="asset_type">server</field>
-            <field name="purchase_value">3500000</field>
-            <field name="warranty_date">2027-01-31</field>
+            <field name="purchase_value">4500000</field>
+            <field name="warranty_date">2028-06-30</field>
             <field name="state">draft</field>
         </record>
         <record id="equipment_demo_04" model="gestion.materiel">
-            <field name="name">Imprimante Canon C3525</field>
+            <field name="name">Imprimante Epson EcoTank</field>
             <field name="code">GP-PRN-001</field>
-            <field name="serial_no">CAN-C3525-001</field>
+            <field name="serial_no">EPS-ECO-001</field>
             <field name="asset_type">printer</field>
-            <field name="purchase_value">620000</field>
-            <field name="warranty_date">2026-08-15</field>
+            <field name="purchase_value">450000</field>
+            <field name="warranty_date">2027-02-28</field>
             <field name="state">maintenance</field>
         </record>
         <record id="equipment_demo_05" model="gestion.materiel">
-            <field name="name">Switch Cisco 48 ports</field>
+            <field name="name">Switch Ubiquiti UniFi 24</field>
             <field name="code">GP-NET-001</field>
-            <field name="serial_no">CISCO48-001</field>
+            <field name="serial_no">UBI-SW24-001</field>
             <field name="asset_type">network</field>
-            <field name="purchase_value">1200000</field>
-            <field name="warranty_date">2026-07-30</field>
+            <field name="purchase_value">850000</field>
+            <field name="warranty_date">2026-11-15</field>
             <field name="state">assigned</field>
         </record>
         <record id="equipment_demo_06" model="gestion.materiel">
-            <field name="name">Routeur MikroTik CCR</field>
+            <field name="name">Routeur Cisco ISR 4000</field>
             <field name="code">GP-NET-002</field>
-            <field name="serial_no">MT-CCR-002</field>
+            <field name="serial_no">CIS-ISR-002</field>
             <field name="asset_type">network</field>
-            <field name="purchase_value">450000</field>
-            <field name="warranty_date">2026-07-10</field>
+            <field name="purchase_value">1500000</field>
+            <field name="warranty_date">2027-03-10</field>
             <field name="state">assigned</field>
         </record>
         <record id="equipment_demo_07" model="gestion.materiel">
-            <field name="name">Telephone IP Yealink T46S</field>
+            <field name="name">Téléphone IP Polycom VVX</field>
             <field name="code">GP-TEL-001</field>
-            <field name="serial_no">YL-T46S-001</field>
+            <field name="serial_no">POL-VVX-001</field>
             <field name="asset_type">phone</field>
-            <field name="purchase_value">95000</field>
-            <field name="warranty_date">2026-11-30</field>
+            <field name="purchase_value">120000</field>
+            <field name="warranty_date">2026-12-15</field>
             <field name="state">assigned</field>
         </record>
         <record id="equipment_demo_08" model="gestion.materiel">
-            <field name="name">Licence Microsoft 365 Business</field>
+            <field name="name">Licence Adobe Creative Cloud</field>
             <field name="code">GP-LIC-001</field>
-            <field name="serial_no">M365-BIZ-001</field>
+            <field name="serial_no">ADOBE-CC-001</field>
             <field name="asset_type">license</field>
-            <field name="purchase_value">120000</field>
-            <field name="warranty_date">2026-07-20</field>
+            <field name="purchase_value">650000</field>
+            <field name="warranty_date">2026-08-20</field>
             <field name="state">assigned</field>
         </record>
         <record id="equipment_demo_09" model="gestion.materiel">
-            <field name="name">Onduleur APC 3000VA</field>
+            <field name="name">Onduleur Eaton 9PX</field>
             <field name="code">GP-UPS-001</field>
-            <field name="serial_no">APC3000-001</field>
+            <field name="serial_no">EATON-9PX-001</field>
             <field name="asset_type">other</field>
-            <field name="purchase_value">540000</field>
-            <field name="warranty_date">2026-10-01</field>
+            <field name="purchase_value">900000</field>
+            <field name="warranty_date">2027-05-01</field>
             <field name="state">assigned</field>
         </record>
         <record id="equipment_demo_10" model="gestion.materiel">
-            <field name="name">Scanner Fujitsu fi-7160</field>
+            <field name="name">Scanner Brother ADS</field>
             <field name="code">GP-SCAN-001</field>
-            <field name="serial_no">FUJ7160-001</field>
+            <field name="serial_no">BRO-ADS-001</field>
             <field name="asset_type">other</field>
-            <field name="purchase_value">380000</field>
-            <field name="warranty_date">2026-06-30</field>
+            <field name="purchase_value">250000</field>
+            <field name="warranty_date">2026-09-30</field>
             <field name="state">assigned</field>
         </record>
 
+        <!-- Nouveaux Accords -->
         <record id="contract_demo_01" model="gestion.accord">
             <field name="name">CTR-MAINT-2026-001</field>
             <field name="partner_id" ref="partner_demo_gp_vendor_1"/>
             <field name="date_start">2026-01-01</field>
-            <field name="date_end">2026-12-31</field>
-            <field name="amount">2500000</field>
+            <field name="date_end">2027-12-31</field>
+            <field name="amount">3500000</field>
             <field name="state">active</field>
             <field name="equipment_ids" eval="[(6, 0, [ref('equipment_demo_01'), ref('equipment_demo_02'), ref('equipment_demo_03')])]"/>
         </record>
         <record id="contract_demo_02" model="gestion.accord">
             <field name="name">CTR-NET-2026-002</field>
             <field name="partner_id" ref="partner_demo_gp_vendor_2"/>
-            <field name="date_start">2026-02-01</field>
-            <field name="date_end">2026-08-31</field>
-            <field name="amount">1400000</field>
+            <field name="date_start">2026-03-01</field>
+            <field name="date_end">2026-09-30</field>
+            <field name="amount">1800000</field>
             <field name="state">active</field>
             <field name="equipment_ids" eval="[(6, 0, [ref('equipment_demo_05'), ref('equipment_demo_06')])]"/>
         </record>
         <record id="contract_demo_03" model="gestion.accord">
             <field name="name">CTR-LIC-2026-003</field>
             <field name="partner_id" ref="partner_demo_gp_vendor_3"/>
-            <field name="date_start">2026-01-15</field>
-            <field name="date_end">2026-07-31</field>
-            <field name="amount">900000</field>
+            <field name="date_start">2026-02-15</field>
+            <field name="date_end">2026-08-31</field>
+            <field name="amount">1200000</field>
             <field name="state">active</field>
             <field name="equipment_ids" eval="[(6, 0, [ref('equipment_demo_08')])]"/>
         </record>
 
+        <!-- Nouvelles Interventions -->
         <record id="intervention_demo_01" model="gestion.intervention">
-            <field name="name">Remplacement batterie laptop</field>
+            <field name="name">Remplacement clavier MacBook</field>
             <field name="parc_equipment_id" ref="equipment_demo_01"/>
-            <field name="date_start">2026-06-01 09:00:00</field>
-            <field name="date_end">2026-06-01 11:00:00</field>
-            <field name="cost">45000</field>
+            <field name="date_start">2026-05-15 09:00:00</field>
+            <field name="date_end">2026-05-15 11:30:00</field>
+            <field name="cost">120000</field>
         </record>
         <record id="intervention_demo_02" model="gestion.intervention">
-            <field name="name">Maintenance imprimante</field>
+            <field name="name">Nettoyage têtes d'impression</field>
             <field name="parc_equipment_id" ref="equipment_demo_04"/>
-            <field name="date_start">2026-06-05 10:00:00</field>
-            <field name="date_end">2026-06-05 13:00:00</field>
-            <field name="cost">80000</field>
-        </record>
-        <record id="intervention_demo_03" model="gestion.intervention">
-            <field name="name">Mise a jour firmware switch</field>
-            <field name="parc_equipment_id" ref="equipment_demo_05"/>
-            <field name="intervention_type">preventive</field>
-            <field name="date_start">2026-06-08 18:00:00</field>
-            <field name="date_end">2026-06-08 20:00:00</field>
+            <field name="date_start">2026-06-02 10:00:00</field>
+            <field name="date_end">2026-06-02 11:00:00</field>
             <field name="cost">35000</field>
         </record>
+        <record id="intervention_demo_03" model="gestion.intervention">
+            <field name="name">Mise à jour OS Switch UniFi</field>
+            <field name="parc_equipment_id" ref="equipment_demo_05"/>
+            <field name="intervention_type">preventive</field>
+            <field name="date_start">2026-06-10 18:00:00</field>
+            <field name="date_end">2026-06-10 19:30:00</field>
+            <field name="cost">45000</field>
+        </record>
         <record id="intervention_demo_04" model="gestion.intervention">
-            <field name="name">Controle onduleur salle serveur</field>
+            <field name="name">Test batteries Onduleur Eaton</field>
             <field name="parc_equipment_id" ref="equipment_demo_09"/>
             <field name="intervention_type">preventive</field>
-            <field name="date_start">2026-06-10 08:00:00</field>
-            <field name="date_end">2026-06-10 09:30:00</field>
-            <field name="cost">25000</field>
+            <field name="date_start">2026-06-15 08:00:00</field>
+            <field name="date_end">2026-06-15 09:00:00</field>
+            <field name="cost">30000</field>
         </record>
         <record id="intervention_demo_05" model="gestion.intervention">
-            <field name="name">Diagnostic routeur principal</field>
+            <field name="name">Configuration VPN Routeur Cisco</field>
             <field name="parc_equipment_id" ref="equipment_demo_06"/>
-            <field name="date_start">2026-06-12 14:00:00</field>
-            <field name="date_end">2026-06-12 16:30:00</field>
-            <field name="cost">60000</field>
+            <field name="date_start">2026-06-20 14:00:00</field>
+            <field name="date_end">2026-06-20 17:00:00</field>
+            <field name="cost">95000</field>
         </record>
     </data>
 </odoo>

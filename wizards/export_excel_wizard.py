@@ -60,12 +60,12 @@ class ExportExcelWizard(models.TransientModel):
     def _formats(self, workbook):
         return {
             'title': workbook.add_format({'bold': True, 'font_size': 14}),
-            'header': workbook.add_format({'bold': True, 'bg_color': '
+            'header': workbook.add_format({'bold': True, 'bg_color': '#4472C4', 'font_color': '#FFFFFF', 'border': 1}),
             'text': workbook.add_format({'border': 1}),
-            'money': workbook.add_format({'border': 1, 'num_format': '
+            'money': workbook.add_format({'border': 1, 'num_format': '#,##0.00'}),
             'date': workbook.add_format({'border': 1, 'num_format': 'yyyy-mm-dd'}),
-            'warning': workbook.add_format({'border': 1, 'bg_color': '
-            'critical': workbook.add_format({'border': 1, 'bg_color': '
+            'warning': workbook.add_format({'border': 1, 'bg_color': '#FFD966'}),
+            'critical': workbook.add_format({'border': 1, 'bg_color': '#FF7070'}),
         }
 
     def _write_headers(self, sheet, headers, formats):
