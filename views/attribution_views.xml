@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_it_attribution_tree" model="ir.ui.view">
+        <field name="name">gestion.attribution.list</field>
+        <field name="model">gestion.attribution</field>
+        <field name="arch" type="xml">
+            <list string="Attributions" decoration-success="state == 'active'" decoration-muted="state == 'closed'">
+                <field name="equipment_id"/>
+                <field name="employee_id"/>
+                <field name="department_id"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_it_attribution_form" model="ir.ui.view">
+        <field name="name">gestion.attribution.form</field>
+        <field name="model">gestion.attribution</field>
+        <field name="arch" type="xml">
+            <form string="Attribution">
+                <header>
+                    <button name="action_close" string="Cloturer" type="object" class="btn-primary" invisible="state != 'active'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="active,closed"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="equipment_id"/>
+                            <field name="employee_id"/>
+                            <field name="department_id"/>
+                        </group>
+                        <group>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="company_id"/>
+                        </group>
+                    </group>
+                    <group string="Motif">
+                        <field name="reason" nolabel="1"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_it_attribution_search" model="ir.ui.view">
+        <field name="name">gestion.attribution.search</field>
+        <field name="model">gestion.attribution</field>
+        <field name="arch" type="xml">
+            <search string="Attributions">
+                <field name="equipment_id"/>
+                <field name="employee_id"/>
+                <field name="department_id"/>
+                <filter string="Actives" name="active" domain="[('state', '=', 'active')]"/>
+                <filter string="Terminees" name="closed" domain="[('state', '=', 'closed')]"/>
+                <group expand="0" string="Regrouper par">
+                    <filter string="Materiel" name="group_equipment" context="{'group_by': 'equipment_id'}"/>
+                    <filter string="Employe" name="group_employee" context="{'group_by': 'employee_id'}"/>
+                    <filter string="Departement" name="group_department" context="{'group_by': 'department_id'}"/>
+                    <filter string="Etat" name="group_state" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_it_attribution" model="ir.actions.act_window">
+        <field name="name">Attributions</field>
+        <field name="res_model">gestion.attribution</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_it_attribution_search"/>
+    </record>
+</odoo>

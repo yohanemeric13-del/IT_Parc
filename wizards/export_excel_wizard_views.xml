@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_it_export_excel_wizard_form" model="ir.ui.view">
+        <field name="name">gestion.export.excel.wizard.form</field>
+        <field name="model">gestion.export.excel.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Exporter Excel">
+                <group>
+                    <field name="export_type"/>
+                </group>
+                <footer>
+                    <button name="action_export" string="Exporter" type="object" class="btn-primary"/>
+                    <button string="Annuler" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_it_export_excel_wizard" model="ir.actions.act_window">
+        <field name="name">Exporter Excel</field>
+        <field name="res_model">gestion.export.excel.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

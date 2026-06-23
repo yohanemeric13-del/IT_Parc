@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem
+            id="menu_gestion_parc_root"
+            name="Gestion Parc"
+            action="action_it_materiel"
+            groups="gestion_parc.group_it_technicien,gestion_parc.group_it_manager"
+            sequence="35"/>
+
+        <menuitem
+            id="menu_gestion_parc_materiels"
+            name="Materiels"
+            parent="menu_gestion_parc_root"
+            action="action_it_materiel"
+            groups="gestion_parc.group_it_technicien,gestion_parc.group_it_manager"
+            sequence="10"/>
+
+        <record id="action_gestion_parc_dashboard" model="ir.actions.client">
+            <field name="name">Dashboard Gestion Parc</field>
+            <field name="tag">gestion_parc.dashboard</field>
+        </record>
+
+        <menuitem
+            id="menu_gestion_parc_dashboard"
+            name="Dashboard"
+            parent="menu_gestion_parc_root"
+            action="action_gestion_parc_dashboard"
+            groups="gestion_parc.group_it_technicien,gestion_parc.group_it_manager"
+            sequence="5"/>
+
+        <menuitem
+            id="menu_gestion_parc_interventions"
+            name="Maintenances"
+            parent="menu_gestion_parc_root"
+            action="action_gestion_intervention"
+            groups="gestion_parc.group_it_technicien,gestion_parc.group_it_manager"
+            sequence="20"/>
+
+        <menuitem
+            id="menu_gestion_parc_attributions"
+            name="Attributions"
+            parent="menu_gestion_parc_root"
+            action="action_it_attribution"
+            groups="gestion_parc.group_it_technicien,gestion_parc.group_it_manager"
+            sequence="25"/>
+
+        <menuitem
+            id="menu_gestion_parc_accords"
+            name="Accords"
+            parent="menu_gestion_parc_root"
+            action="action_it_accord"
+            groups="gestion_parc.group_it_technicien,gestion_parc.group_it_manager"
+            sequence="30"/>
+
+        <menuitem
+            id="menu_gestion_parc_alertes"
+            name="Notifications"
+            parent="menu_gestion_parc_root"
+            action="action_gestion_alerte"
+            groups="gestion_parc.group_it_technicien,gestion_parc.group_it_manager"
+            sequence="40"/>
+
+        <menuitem
+            id="menu_gestion_parc_operations"
+            name="Operations"
+            parent="menu_gestion_parc_root"
+            groups="gestion_parc.group_it_manager"
+            sequence="50"/>
+
+        <menuitem
+            id="menu_gestion_parc_import_csv"
+            name="Importer CSV"
+            parent="menu_gestion_parc_operations"
+            action="action_it_import_csv_wizard"
+            groups="gestion_parc.group_it_manager"
+            sequence="10"/>
+
+        <menuitem
+            id="menu_gestion_parc_scan_alertes"
+            name="Scanner les alertes"
+            parent="menu_gestion_parc_operations"
+            action="action_it_scan_alertes_wizard"
+            groups="gestion_parc.group_it_manager"
+            sequence="20"/>
+
+        <menuitem
+            id="menu_gestion_parc_export_excel"
+            name="Exporter Excel"
+            parent="menu_gestion_parc_operations"
+            action="action_it_export_excel_wizard"
+            groups="gestion_parc.group_it_manager"
+            sequence="30"/>
+    </data>
+</odoo>

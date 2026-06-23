@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_it_accord_tree" model="ir.ui.view">
+        <field name="name">gestion.accord.list</field>
+        <field name="model">gestion.accord</field>
+        <field name="arch" type="xml">
+            <list string="Accords">
+                <field name="name"/>
+                <field name="contract_type"/>
+                <field name="partner_id"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="days_left"/>
+                <field name="amount"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_it_accord_form" model="ir.ui.view">
+        <field name="name">gestion.accord.form</field>
+        <field name="model">gestion.accord</field>
+        <field name="arch" type="xml">
+            <form string="Accord">
+                <header>
+                    <button name="action_activate" string="Activer" type="object" class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="%(gestion_parc.action_it_renouvellement_accord_wizard)d" string="Renouveler" type="action" context="{'default_contract_id': id}" invisible="state == 'closed'"/>
+                    <button name="action_mark_expired" string="Marquer expire" type="object" invisible="state == 'expired'"/>
+                    <button name="action_close" string="Cloturer" type="object" invisible="state == 'closed'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,active,expired,closed"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="contract_type"/>
+                            <field name="partner_id"/>
+                            <field name="company_id"/>
+                            <field name="purchase_order_id"/>
+                            <field name="invoice_id"/>
+                        </group>
+                        <group>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="days_left"/>
+                            <field name="is_expired"/>
+                            <field name="amount"/>
+                            <field name="currency_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Materiels couverts">
+                            <field name="equipment_ids"/>
+                        </page>
+                        <page string="Notes">
+                            <field name="notes"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_it_accord" model="ir.actions.act_window">
+        <field name="name">Accords</field>
+        <field name="res_model">gestion.accord</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

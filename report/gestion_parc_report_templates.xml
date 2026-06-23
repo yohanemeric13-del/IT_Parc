@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_it_materiel_fiche">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Fiche materiel</h2>
+                        <table class="table table-sm">
+                            <tr><th>Reference</th><td><span t-field="doc.code"/></td></tr>
+                            <tr><th>Nom</th><td><span t-field="doc.name"/></td></tr>
+                            <tr><th>Type</th><td><span t-field="doc.asset_type"/></td></tr>
+                            <tr><th>Numero de serie</th><td><span t-field="doc.serial_no"/></td></tr>
+                            <tr><th>Etat</th><td><span t-field="doc.state"/></td></tr>
+                            <tr><th>Employe</th><td><span t-field="doc.employee_id"/></td></tr>
+                            <tr><th>Departement</th><td><span t-field="doc.department_id"/></td></tr>
+                            <tr><th>Site</th><td><span t-field="doc.site"/></td></tr>
+                            <tr><th>Garantie</th><td><span t-field="doc.warranty_date"/></td></tr>
+                            <tr><th>Valeur achat</th><td><span t-field="doc.purchase_value"/></td></tr>
+                        </table>
+
+                        <h3>Maintenances</h3>
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Maintenance</th>
+                                    <th>Type</th>
+                                    <th>Debut</th>
+                                    <th>Fin</th>
+                                    <th>Duree</th>
+                                    <th>Cout</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="doc.intervention_ids" t-as="line">
+                                    <td><span t-field="line.name"/></td>
+                                    <td><span t-field="line.intervention_type"/></td>
+                                    <td><span t-field="line.date_start"/></td>
+                                    <td><span t-field="line.date_end"/></td>
+                                    <td><span t-field="line.duration_hours"/></td>
+                                    <td><span t-field="line.cost"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_it_inventaire">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h2>Inventaire parc informatique</h2>
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Reference</th>
+                                <th>Nom</th>
+                                <th>Type</th>
+                                <th>Serie</th>
+                                <th>Employe</th>
+                                <th>Departement</th>
+                                <th>Etat</th>
+                                <th>Garantie</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="docs" t-as="doc">
+                                <td><span t-field="doc.code"/></td>
+                                <td><span t-field="doc.name"/></td>
+                                <td><span t-field="doc.asset_type"/></td>
+                                <td><span t-field="doc.serial_no"/></td>
+                                <td><span t-field="doc.employee_id"/></td>
+                                <td><span t-field="doc.department_id"/></td>
+                                <td><span t-field="doc.state"/></td>
+                                <td><span t-field="doc.warranty_date"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_it_maintenance_history">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h2>Historique des maintenances</h2>
+                    <t t-set="total_cost" t-value="sum(docs.mapped('cost'))"/>
+                    <p><strong>Cout total :</strong> <span t-esc="total_cost"/></p>
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Maintenance</th>
+                                <th>Materiel</th>
+                                <th>Type</th>
+                                <th>Debut</th>
+                                <th>Fin</th>
+                                <th>Duree</th>
+                                <th>Cout</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="docs" t-as="doc">
+                                <td><span t-field="doc.name"/></td>
+                                <td><span t-field="doc.parc_equipment_id"/></td>
+                                <td><span t-field="doc.intervention_type"/></td>
+                                <td><span t-field="doc.date_start"/></td>
+                                <td><span t-field="doc.date_end"/></td>
+                                <td><span t-field="doc.duration_hours"/></td>
+                                <td><span t-field="doc.cost"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

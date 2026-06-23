@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_it_reattribution_wizard_form" model="ir.ui.view">
+        <field name="name">gestion.reattribution.wizard.form</field>
+        <field name="model">gestion.reattribution.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Reaffecter un materiel">
+                <group>
+                    <field name="equipment_id"/>
+                    <field name="current_employee_id"/>
+                    <field name="current_department_id"/>
+                    <field name="new_employee_id"/>
+                    <field name="new_department_id"/>
+                    <field name="date_start"/>
+                    <field name="reason"/>
+                </group>
+                <footer>
+                    <button name="action_reassign" string="Reaffecter" type="object" class="btn-primary"/>
+                    <button string="Annuler" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_it_reattribution_wizard" model="ir.actions.act_window">
+        <field name="name">Reaffecter</field>
+        <field name="res_model">gestion.reattribution.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>
