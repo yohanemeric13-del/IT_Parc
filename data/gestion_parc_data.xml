@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="param_warranty_alert_delay_days" model="ir.config_parameter">
+            <field name="key">gestion_parc.warranty_alert_delay_days</field>
+            <field name="value">30</field>
+        </record>
+
+        <record id="param_contract_alert_delay_days" model="ir.config_parameter">
+            <field name="key">gestion_parc.contract_alert_delay_days</field>
+            <field name="value">60</field>
+        </record>
+
+        <record id="ir_cron_gestion_parc_scan_alerts" model="ir.cron">
+            <field name="name">Gestion Parc - Scan des alertes</field>
+            <field name="model_id" ref="model_gestion_alerte"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_scan_alerts()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>
