@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_it_materiel_technicien,gestion.materiel technicien,model_gestion_materiel,gestion_parc.group_it_technicien,1,0,0,0
+access_it_materiel_manager,gestion.materiel manager,model_gestion_materiel,gestion_parc.group_it_manager,1,1,1,1
+access_it_attribution_technicien,gestion.attribution technicien,model_gestion_attribution,gestion_parc.group_it_technicien,1,0,0,0
+access_it_attribution_manager,gestion.attribution manager,model_gestion_attribution,gestion_parc.group_it_manager,1,1,1,1
+access_it_intervention_technicien,gestion.intervention technicien,model_gestion_intervention,gestion_parc.group_it_technicien,1,1,1,0
+access_it_intervention_manager,gestion.intervention manager,model_gestion_intervention,gestion_parc.group_it_manager,1,1,1,1
+access_it_accord_technicien,gestion.accord technicien,model_gestion_accord,gestion_parc.group_it_technicien,1,0,0,0
+access_it_accord_manager,gestion.accord manager,model_gestion_accord,gestion_parc.group_it_manager,1,1,1,1
+access_it_alerte_technicien,gestion.alerte technicien,model_gestion_alerte,gestion_parc.group_it_technicien,1,1,0,0
+access_it_alerte_manager,gestion.alerte manager,model_gestion_alerte,gestion_parc.group_it_manager,1,1,1,1
+access_it_reattribution_wizard_manager,gestion.reattribution.wizard manager,model_it_reattribution_wizard,gestion_parc.group_it_manager,1,1,1,1
+access_it_renouvellement_accord_wizard_manager,gestion.renouvellement.accord.wizard manager,model_it_renouvellement_accord_wizard,gestion_parc.group_it_manager,1,1,1,1
+access_it_scan_alertes_wizard_manager,gestion.scan.alertes.wizard manager,model_it_scan_alertes_wizard,gestion_parc.group_it_manager,1,1,1,1
+access_it_import_csv_wizard_manager,gestion.import.csv.wizard manager,model_it_import_csv_wizard,gestion_parc.group_it_manager,1,1,1,1
+access_it_export_excel_wizard_manager,gestion.export.excel.wizard manager,model_it_export_excel_wizard,gestion_parc.group_it_manager,1,1,1,1
